@@ -3,45 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BesLom</title>
-  <meta name="description" content="Lom · Besprebel OC 프로필">
+  <title>캐릭터 소개</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
+    <a class="back" id="back" href="./" hidden>← 페어 목록</a>
     <p class="eyebrow" id="site-sub"></p>
     <h1 id="site-title"></h1>
     <nav class="tabs" id="tabs"></nav>
   </header>
 
   <main>
-    <section class="block world" id="world" hidden>
-      <h2 class="block-title"><span>WORLD</span><b id="world-title">세계관</b></h2>
-      <div class="prose" id="world-body"></div>
+    <!-- 첫 화면: 페어 목록 -->
+    <section class="home" id="home" hidden>
+      <div class="pair-grid" id="pair-grid"></div>
     </section>
 
-    <div id="characters"></div>
+    <!-- 페어 페이지 -->
+    <div id="pair-view" hidden>
+      <section class="block world" id="world" hidden>
+        <h2 class="block-title"><span>WORLD</span><b id="world-title">세계관</b></h2>
+        <div class="prose" id="world-body"></div>
+      </section>
 
-    <section class="block" id="relationship">
-      <h2 class="block-title"><span>RELATIONSHIP</span>관계성</h2>
-      <p class="rel-summary" id="rel-summary"></p>
-      <div class="rel-table-wrap"><table class="rel-table" id="rel-table"></table></div>
-      <div class="prose" id="rel-detail"></div>
-    </section>
+      <div id="characters"></div>
 
-    <section class="block" id="history">
-      <h2 class="block-title"><span>HISTORY</span>과거사</h2>
-      <ol class="timeline" id="timeline"></ol>
-    </section>
+      <section class="block" id="relationship">
+        <h2 class="block-title"><span>RELATIONSHIP</span>관계성</h2>
+        <p class="rel-summary" id="rel-summary"></p>
+        <div class="rel-table-wrap"><table class="rel-table" id="rel-table"></table></div>
+        <div class="prose" id="rel-detail"></div>
+      </section>
+
+      <section class="block" id="history">
+        <h2 class="block-title"><span>HISTORY</span>과거사</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+    </div>
+
+    <p class="not-found" id="not-found" hidden>페어를 찾을 수 없습니다. <a href="./">목록으로</a></p>
   </main>
 
   <footer class="site-footer">
     <p>페이지는 바이브코딩으로 제작했으며, 캐릭터 설정과 본문은 모두 직접 작성했습니다.</p>
+    <p class="footer-sub"><a href="editor.html" id="editor-link">편집기</a></p>
   </footer>
 
-  <script src="data.js"></script>
+  <script src="pairs.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
